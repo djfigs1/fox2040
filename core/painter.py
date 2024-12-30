@@ -1,5 +1,5 @@
 import badger2040
-from widgets.rect import Rect
+from core.rect import Rect
 
 
 class Painter:
@@ -24,7 +24,7 @@ class Painter:
         self.draw_rect(right, color)
 
         return rect.gap(length)
-    
+
     def draw_rect(self, rect, color=-1):
         if color > -1:
             self.display.set_pen(color)

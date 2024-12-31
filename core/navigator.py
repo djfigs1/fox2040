@@ -24,5 +24,11 @@ class Navigator:
         painter.draw_rect(bottom, 10)
 
         if len(self.pages) > 0:
-            window = self.pages[self._page_index]
-            window.draw(painter, top)
+            window = self._get_current_page()
+            return window.draw(painter, top)
+
+    def _get_current_page(self):
+        return self.pages[self._page_index]
+
+    def update(self, input_state):
+        return self._get_current_page().update(input_state)
